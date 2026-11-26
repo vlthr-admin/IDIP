@@ -1,8 +1,8 @@
 # IDIP — Industrial Decision Intelligence Platform
 
-**Initial market:** Oil and gas. **Product:** Modular industrial decision intelligence platform. **Status:** Architecture baseline draft; implementation and validation remain pending.
+**Initial market:** Oil and gas. **Product:** Modular industrial decision intelligence platform. **Status:** Architecture baseline and initial web UI scaffold committed; validation and deployment pending.
 
-IDIP connects physical asset condition to reliability, maintenance, supply chain, operational risk, economics and enterprise decisions. It complements existing PLC, DCS, SCADA, SIS, ERP and CMMS/EAM systems. It is not a replacement for those systems and does not control plant equipment.
+IDIP connects physical asset condition to reliability, maintenance, supply chain, operational risk, economics and enterprise decisions. It complements existing PLC, DCS, SCADA, SIS, ERP and CMMS/EAM systems. It does not replace or control those systems.
 
 ## Architecture baseline
 - [A01 Architecture Charter](docs/architecture/01-architecture-charter.md)
@@ -19,6 +19,9 @@ IDIP connects physical asset condition to reliability, maintenance, supply chain
 - [A12 Verification and Validation](docs/architecture/12-verification-and-validation.md)
 - [A13 Initial Risk Register](docs/architecture/13-initial-risk-register.md)
 
+## Application
+The initial Next.js/TypeScript workspace is under apps/web. It is a static demonstration surface with synthetic operational data. Root scripts support development, lint, typecheck, tests and build. See [deployment runbook](docs/DEPLOYMENT.md) and [implementation rules](docs/IMPLEMENTATION_RULES.md).
+
 ## Governing rules
 1. Separate measured, derived, predicted and recommended information.
 2. Preserve provenance for data, models, simulations and decisions.
@@ -31,15 +34,15 @@ IDIP connects physical asset condition to reliability, maintenance, supply chain
 ## Initial equipment scope
 Gas compressors, production/export pumps, generators and power equipment, selected subsea equipment, and export pipelines. This is a starting catalogue, not a complete taxonomy.
 
-## Capability status vocabulary
+## Capability status
 Conceptual → Implemented → Functionally tested → Experimentally evaluated → Independently validated → Production approved.
 
 A working demonstration is not proof of industrial validation or production readiness. Synthetic data supports software and scenario testing, not field validation.
 
-## Current status
-- Architecture baseline: committed as draft.
-- Application implementation: not yet committed in this initial documentation push.
-- Database migration: not deployed.
-- Production integrations: not implemented.
-- Model performance and OT security: not validated.
+## Deployment status
+- Architecture baseline and initial application scaffold: committed.
+- Supabase schema: draft only; not deployed.
+- Automatic Supabase migration workflow: intentionally withheld pending schema and target-project review.
+- Vercel deployment: not yet verified.
+- Production integrations, model performance and OT security: not validated.
 - Production approval: not granted.
